@@ -93,7 +93,7 @@
                             <img class="img-fluid" src="{{asset('assets/img/about-1.jpg')}}">
                         </div>
                         <div class="col-6">
-                            <img class="img-fluid" src="{{('assetsimg/about-2.jpg')}}">
+                            <img class="img-fluid" src="{{asset('assets/img/about-2.jpg')}}">
                         </div>
                         <div class="col-6">
                             <img class="img-fluid" src="{{asset('assets/img/about-3.jpg')}}">
@@ -296,7 +296,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-heart-pulse text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Pathology Testing</h4>
+                        <h5 class="mb-3">Polio Vaccine</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -306,7 +306,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-lungs text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Microbiology Tests</h4>
+                        <h5 class="mb-3">Hepatitis B Vaccine</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -316,7 +316,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-virus text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Biochemistry Tests</h4>
+                        <h5 class="mb-3">Typhoid Vaccines</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -326,7 +326,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-capsule-pill text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Histopatology Tests</h4>
+                        <h5 class="mb-3">COVID-19 Vaccines</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -336,7 +336,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-capsule text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Urine Tests</h4>
+                        <h5 class="mb-3">Measles Vaccine</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -346,7 +346,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-prescription2 text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Blood Tests</h4>
+                        <h5 class="mb-3">Rotavirus Vaccine</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -356,7 +356,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-clipboard2-pulse text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Fever Tests</h4>
+                        <h5 class="mb-3">RTS,S/AS01</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>
@@ -366,7 +366,7 @@
                         <div class="icon-box-primary mb-4">
                             <i class="bi bi-file-medical text-dark"></i>
                         </div>
-                        <h5 class="mb-3">Allergy Tests</h4>
+                        <h5 class="mb-3">Dengue</h4>
                             <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tellus augue.</p>
                         <a class="btn btn-light px-3" href="">Read More<i class="bi bi-chevron-double-right ms-1"></i></a>
                     </div>

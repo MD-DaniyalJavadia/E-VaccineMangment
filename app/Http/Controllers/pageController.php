@@ -42,4 +42,8 @@ class pageController extends Controller
     {
         return view('notfound');
     }
+    public function signinFun()
+    {
+        return view("signin");
+    }
 }

@@ -19,3 +19,4 @@ Route::get("team",[pageController::class,"teampageFun"])->name("team.page");
 Route::get("testimonial",[pageController::class,"testimonialpageFun"])->name("testimonial.page");
 Route::get("appoinment",[pageController::class,"appoinmentpageFun"])->name("appoinment.page");
 Route::get("404notfound",[pageController::class,"notfoundpageFun"])->name('404notfound.page');
+Route::get("SignIn",[pageController::class,"signinFun"])->name('signIN');
