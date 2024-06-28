@@ -23,7 +23,25 @@
             <!-- place navbar here -->
         </header>
         <main>
-            
+            <div class="container col-lg-5 my-5">
+                @if(session()->has('error'))
+                    <div class="alert alert-warning">
+                        {{session()->get('error')}}
+                    </div>
+                @endif  
+                <form action="{{route('siginPost')}}" method="post" class="form-control">
+                    @csrf 
+                    <div class="inputEamil">
+                        <label for="">Email</label>
+                        <input type="text" name="userEmail" placeholder="name@email.com" class="form-control">
+                    </div>   
+                    <div class="inputPassWord">
+                        <label for="">Password</label>
+                        <input type="text" name="userPassword" placeholder="Password" class="form-control">
+                    </div>
+                    <button class="btn btn-success my-2">Login</button>
+                </form>
+                </div>
         </main>
         <footer>
             <!-- place footer here -->
