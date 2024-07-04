@@ -117,13 +117,21 @@ class pageController extends Controller
     public function signuppost(Request $request)
     {
         $childinfo = new childinfo;
-        $childinfo->parent_email=$request->userEmail;
-        $childinfo->password=$request->userPassword;
+        $childinfo->first_name=$request->firstName;
+        $childinfo->last_name=$request->lastName;
+        $childinfo->parent_email=$request->parentEmail;
+        $childinfo->password=$request->password;
+        $childinfo->phno_number=$request->phnoNumber;
+        $childinfo->Address=$request->address;
         $childinfo->save();
-        return redirect()->back()->with("success","User Added SuccessFully");
+        return redirect()->back()->with("success","Usper Added SuccessFully");
     }
     public function forgotpassword()
     {
         return view("forget");
+    }
+    public function signuphostpial()
+    {
+        return view("signuphospital");
     }
 }

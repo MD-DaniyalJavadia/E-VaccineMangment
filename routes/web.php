@@ -26,12 +26,14 @@ Route::get("admin/dashboard/dashboard",[pageController::class,"dashboardFun"])->
 Route::get("admin/dashboard/master",[pageController::class,"masterFun"])->name("master");
 
 Route::get("signup-admin",[pageController::class,"signupfunction"])->name('signup');
-Route::post("signuppost",[pageController::class,"signuppostfunction"])->name('signup.post');
+Route::post("signuppostadmin",[pageController::class,"signuppostfunction"])->name('signup.post');
 
 Route::get("signin-parent",[pageController::class,"signin_parent"])->name('signinparent');
 Route::post("signin-post",[pageController::class,"signinparentpost"])->name('signinparent.post');
 
 Route::get("signup-parent",[pageController::class,"signupparent"])->name('signup-parent');
-Route::post("signup-parentpost",[pageController::class,"signuppost"])->name('signupparent.post');
+Route::post("signupparentpost",[pageController::class,"signuppost"])->name('signupparentpost');
 
 Route::get("forgot",[pageController::class,"forgotpassword"])->name('forgot.page');
+
+Route::get("signup-hospital",[pageController::class,"signuphostpial"]);
