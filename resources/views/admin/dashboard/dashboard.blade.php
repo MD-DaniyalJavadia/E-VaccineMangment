@@ -1,5 +1,3 @@
 @extends("admin/dashboard/master")
-
-@section("dashbord-page-content")
-    riUENFKfsj
+@section('dashbord-page-content')
 @endsection

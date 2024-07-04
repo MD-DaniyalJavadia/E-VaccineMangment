@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\admin;
+use App\Models\childinfo;
 class pageController extends Controller
 {
     public function prelogin()
@@ -14,13 +15,27 @@ class pageController extends Controller
         }
         else
         {
-            return view("signin");
+            return view("signinadmin");
         }
         }
         public function logout()
         {
             session()->forget("admin");
             return redirect("home");
+        }
+        public function signupfunction()
+        {
+            return view("signupadmin");
+        }
+        public function signuppostfunction(Request $request)
+        {
+     
+        $admin = new admin;
+        $admin->user_email=$request->userEmail;
+        $admin->user_password=$request->userPassword;
+        $admin->save();
+        return redirect()->back()->with("AdminSuccess","Admin Added SuccessFully");
+    
         }
  
     public function homePageFun()
@@ -61,7 +76,7 @@ class pageController extends Controller
     }
     public function signinFun()
     {
-        return view("signin");
+        return view("signinadmin");
     }
     // public function masterFun()
     // {
@@ -85,7 +100,30 @@ class pageController extends Controller
         }
         else
         {
-            return redirect()->back()->with('error',"Please Enter A Valid Email Or Password");
+            return redirect()->back()->with('error',"Sorry, your password was incorrect. Please double-check your password.");
         }
+    }
+    public function signin_parent()
+    {
+        return view("signinparent");
+    }
+    public function signinparentpost(Request $request)
+    {
+    }
+    public function signupparent()
+    {
+        return view("signupparent");
+    }
+    public function signuppost(Request $request)
+    {
+        $childinfo = new childinfo;
+        $childinfo->parent_email=$request->userEmail;
+        $childinfo->password=$request->userPassword;
+        $childinfo->save();
+        return redirect()->back()->with("success","User Added SuccessFully");
+    }
+    public function forgotpassword()
+    {
+        return view("forget");
     }
 }

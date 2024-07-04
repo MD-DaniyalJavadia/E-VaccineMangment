@@ -111,8 +111,8 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                        <a href="{{route('signIN')}}" class="nav-item nav-link">Sign In</a>
-                        <a href="#" class="nav-item nav-link">Sign Up</a>
+                        <a href="{{route('signinparent')}}" class="nav-item nav-link">Sign In</a>
+                        <a href="{{route('signup')}}" class="nav-item nav-link">Sign Up</a>
                     </div>
                     <div class="ms-auto d-none d-lg-flex">
                         <a class="btn btn-sm-square btn-primary ms-2" href=""><i class="fab fa-facebook-f"></i></a>

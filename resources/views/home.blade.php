@@ -406,24 +406,30 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <h2 class="mb-4">Online Appoinment</h2>
+                    <h2 class="mb-4">Book Your Vaccine</h2>
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                <label for="name">Your Name</label>
+                                <label for="name">Full Name</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                                <label for="mail">Your Email</label>
+                                <input type="text" class="form-control" id="mail" placeholder="Your Email">
+                                <label for="mail">Date Of Birth</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                <label for="mobile">Your Mobile</label>
+                                <label for="mobile">Contact Number</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <label for="mobile">Email Address</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -434,16 +440,35 @@
                                     <option value="">Biochemistry Tests</option>
                                     <option value="">Histopatology Tests</option>
                                 </select>
-                                <label for="service">Choose A Service</label>
+                                <label for="service">Vaccine Type</label>
                             </div>
+                            
                         </div>
-                        <div class="col-12">
+                        <div class="col-sm-6">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
-                                    style="height: 130px"></textarea>
-                                <label for="message">Message</label>
+                                <input type="date" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <label for="mobile">Appointment Date</label>
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <input type="time" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <label for="mobile">Appointment Time</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="service">
+                                    <option selected>Pathology Testing</option>
+                                    <option value="">Microbiology Tests</option>
+                                    <option value="">Biochemistry Tests</option>
+                                    <option value="">Histopatology Tests</option>
+                                </select>
+                                <label for="service">Hospital</label>
+                            </div>
+                            
+                        </div>
+
                         <div class="col-12 text-center">
                             <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                         </div>
