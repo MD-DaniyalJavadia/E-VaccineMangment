@@ -39,20 +39,29 @@
                             </div>
                             <form class="user" method="post" action="{{route('signup.post')}}">
                                 @csrf
+                        @if(session()->has('AdminSuccess'))
+                            <div class="alert alert-warning">
+                                 {{session()->get('AdminSuccess')}}
+                             </div>
+                        @endif
                                 <div class="form-group">
                                     <input type="email" class="form-control form-control-user"  name="userEmail" id="exampleInputEmail"
                                         placeholder="Email Address">
                                 </div>
-                                <div class="form-group row">
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user"  name="userPassword" id="exampleInputEmail"
+                                        placeholder="Password">
+                                </div>
+                                <!-- <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleInputPassword"  name="userPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
+                                    </div> -->
+                                    <!-- <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
+                                    </div> -->
+                                <!-- </div> -->
                                 <!-- <a action="" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </a> -->

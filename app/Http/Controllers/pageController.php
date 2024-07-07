@@ -18,14 +18,25 @@ class pageController extends Controller
             return view("signinadmin");
         }
         }
-        public function logout()
-        {
-            session()->forget("admin");
-            return redirect("home");
-        }
+    // public function parentprelogin()
+    // {
+    //     if(session('childinfo')!=null)
+    //     {
+    //         return redirect("parent/dashboard/dashboard");
+    //     }
+    //     else
+    //     {
+    //         return view("signinparent");
+    //     }
+    //     }
+    //     public function logout()
+    //     {
+    //         session()->forget("childinfo");
+    //         return redirect("home");
+    //     }
         public function signupfunction()
         {
-            return view("signupadmin");
+            return view("signupparent");
         }
         public function signuppostfunction(Request $request)
         {
@@ -86,6 +97,10 @@ class pageController extends Controller
     {
         return view("admin/dashboard/dashboard");
     }
+    public function parentdashboardFun()
+    {
+        return view("parent/dashboard/dashboard");
+    }
 
     public function signinPost(Request $request)
     {
@@ -108,8 +123,24 @@ class pageController extends Controller
         return view("signinparent");
     }
     public function signinparentpost(Request $request)
-    {
-    }
+    
+        {
+            $email = $request->input('parentEmail');
+            $password=$request->input('password');
+            $childinfo = childinfo::where("parent_email",$email)->where("password",$password)->first();
+
+            if($childinfo)
+            {
+                session(["childinfo"=>$childinfo]);
+                return redirect("parent/dashboard/dashboard");
+                // return redirect("admin/dashboard/dashboard");
+            }
+            else
+            {
+                return redirect()->back()->with('error',"Sorry, your password was incorrect. Please double-check your password.");
+            }
+        }
+    
     public function signupparent()
     {
         return view("signupparent");
