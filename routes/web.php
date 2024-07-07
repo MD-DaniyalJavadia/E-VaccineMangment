@@ -40,7 +40,6 @@ Route::get("signup-hospital",[pageController::class,"signuphostpial"]);
 
 Route::get("parent/dashboard/dashboard",[pageController::class,"parentdashboardFun"])->name("parentdashboard");
 
-// Route::get("parent/dashboard/master",[pageController::class,"parentmaster"]);
-// Route::get("parent/dashboard/dashboard",[pageController::class,"parentdashboardFun"]);
-// Route::get("parent/dashboard/dashboard",[PageController::class,"parentDashboard"])->name('parentDashboard');
-// Route::get("parent-login",[pageController::class,"parentprelogin"]);
+Route::get("login",[pageController::class,"parentprelogin"]);
+Route::get("logout",[pageController::class,"parentlogout"])->name("parent-logout");
+

@@ -81,7 +81,7 @@
                             <a href="404.html" class="dropdown-item">404 Error</a>
                             <a href="blank.html" class="dropdown-item">Blank Page</a>
                         </div>
-                        <a href="{{route('logout')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Logout</a>
+                        <a href="{{route('parent-logout')}}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Logout</a>
 
                         </div>
                 </div>

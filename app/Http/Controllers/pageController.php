@@ -18,22 +18,22 @@ class pageController extends Controller
             return view("signinadmin");
         }
         }
-    // public function parentprelogin()
-    // {
-    //     if(session('childinfo')!=null)
-    //     {
-    //         return redirect("parent/dashboard/dashboard");
-    //     }
-    //     else
-    //     {
-    //         return view("signinparent");
-    //     }
-    //     }
-    //     public function logout()
-    //     {
-    //         session()->forget("childinfo");
-    //         return redirect("home");
-    //     }
+    public function parentprelogin()
+    {
+        if(session('childinfo')!=null)
+        {
+            return redirect("parent/dashboard/dashboard");
+        }
+        else
+        {
+            return view("signinparent");
+        }
+        }
+        public function parentlogout()
+        {
+            session()->forget("childinfo");
+            return redirect("home");
+        }
         public function signupfunction()
         {
             return view("signupparent");
@@ -89,11 +89,7 @@ class pageController extends Controller
     {
         return view("signinadmin");
     }
-    // public function masterFun()
-    // {
-    //     return view("admin/dashboard/master");
-    // }
-    public function dashboardFun()
+        public function dashboardFun()
     {
         return view("admin/dashboard/dashboard");
     }
@@ -133,7 +129,6 @@ class pageController extends Controller
             {
                 session(["childinfo"=>$childinfo]);
                 return redirect("parent/dashboard/dashboard");
-                // return redirect("admin/dashboard/dashboard");
             }
             else
             {
