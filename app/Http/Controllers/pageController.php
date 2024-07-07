@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\admin;
 use App\Models\childinfo;
+use App\Models\hospital;
 class pageController extends Controller
 {
     public function prelogin()
@@ -114,7 +115,7 @@ class pageController extends Controller
             return redirect()->back()->with('error',"Sorry, your password was incorrect. Please double-check your password.");
         }
     }
-    public function signin_parent()
+    public function signinparent()
     {
         return view("signinparent");
     }
@@ -140,7 +141,7 @@ class pageController extends Controller
     {
         return view("signupparent");
     }
-    public function signuppost(Request $request)
+    public function signupParentPost(Request $request)
     {
         $childinfo = new childinfo;
         $childinfo->first_name=$request->firstName;
@@ -156,8 +157,65 @@ class pageController extends Controller
     {
         return view("forget");
     }
-    public function signuphostpial()
+    public function signupHospital()
     {
         return view("signuphospital");
     }
+    public function signupHospitalPost(Request $request)
+    {
+        
+        $hostpital = new hospital;
+        $hostpital->hostpitalName=$request-> hostpital_name ;
+        $hostpital->hostpitalEmail=$request->hostpital_email;
+        $hostpital->password=$request->Password;
+        $hostpital->contactNumber=$request->contact_number;
+        $hostpital->address=$request->Address;
+        $hostpital->save();
+        return redirect()->back()->with("Hospital","Hostpital Registerd SuccessFully");
+    
+       
+    }
+    public function hospitalDashboardFun()
+
+    {
+        return view("hospital/dashboard/dashboard");
+    }
+    public function signinHospital()
+    {
+        return view('signinhospital');
+    }
+    public function signinHospitalPost(Request $request)
+    {
+        
+        $email = $request->input('hopital_email');
+        $password=$request->input('password');
+        $hostpital= hospital::where("hostpitalEmail",$email)->where("password",$password)->first();
+        
+        if($hostpital)
+        {
+            session(["hospital"=>$hostpital]);  
+            return redirect("hospital/dashboard/dashboard");
+        }
+        else
+        {
+            return redirect()->back()->with('error',"Sorry, your password was incorrect. Please double-check your password.");
+        }
+    }
+    public function hospitalprelogin()
+    {
+        if(session('hospital')!=null)
+        {
+            return redirect("hospital/dashboard/dashboard");
+        }
+        else
+        {
+            return view("signinhospital");
+        }
+        }
+        public function hospitallogout()
+        {
+            session()->forget("hospital");
+            return redirect("home");
+        }
+    
 }

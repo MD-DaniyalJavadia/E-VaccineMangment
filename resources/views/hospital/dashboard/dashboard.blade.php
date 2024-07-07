@@ -1,0 +1,2 @@
+@extends("hospital/dashboard/master")
+
