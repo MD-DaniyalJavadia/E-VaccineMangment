@@ -22,7 +22,7 @@ Route::get("signin-admin",[PageController::class,"signinFun"])->name('signINAdmi
 Route::post("signinpost",[PageController::class,"signinPost"])->name("siginPostAdmin");
 
 Route::get("login",[PageController::class,"prelogin"]);
-Route::get("logout",[PageController::class,"logout"])->name("logout");
+Route::get("admin-logout",[PageController::class,"logout"])->name("logout");
 
 Route::get("admin/dashboard/dashboard",[PageController::class,"dashboardFun"])->name("dashboard");
 Route::get("admin/dashboard/master",[PageController::class,"masterFun"])->name("master");
@@ -44,7 +44,7 @@ Route::post("signup-hospital-post",[PageController::class,"signupHospitalPost"])
 Route::get("parent/dashboard/dashboard",[PageController::class,"parentDashboardFun"])->name("parentdashboard");
 
 Route::get("login",[PageController::class,"parentPrelogin"]);
-Route::get("logout",[PageController::class,"parentLogout"])->name("parent-logout");
+Route::get("parent-logout",[PageController::class,"parentlogout"])->name("parentlogout");
 
 Route::get("hospital/dashboard/dashboard",[PageController::class,"hospitalDashboardFun"]);
 Route::get("hospital/dashboard/hostpitaladd",[PageController::class,"hospitalAdd"]);
@@ -55,3 +55,4 @@ Route::post("signin-post-hospital",[PageController::class,"signinHospitalPost"])
 
 Route::get("login",[PageController::class,"hospitalprelogin"]);
 Route::get("logout",[PageController::class,"hospitallogout"])->name("hospital-logout");
+Route::get("hospital/dashboard/vaccineadd",[pageController::class,"vaccineaddfun"])->name('vaccineadd');

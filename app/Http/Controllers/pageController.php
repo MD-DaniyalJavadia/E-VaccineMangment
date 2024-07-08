@@ -19,6 +19,11 @@ class pageController extends Controller
             return view("signinadmin");
         }
         }
+        public function logout()
+        {
+            session()->forget("admin");
+            return redirect("home");
+        }
     public function parentprelogin()
     {
         if(session('childinfo')!=null)
@@ -37,7 +42,7 @@ class pageController extends Controller
         }
         public function signupfunction()
         {
-            return view("signupparent");
+            return view("signupadmin");
         }
         public function signuppostfunction(Request $request)
         {
@@ -217,5 +222,8 @@ class pageController extends Controller
             session()->forget("hospital");
             return redirect("home");
         }
-    
-}
+        public function vaccineaddfun()
+        {
+            return view('hospital/dashboard/vaccineadd');
+        }
+}   

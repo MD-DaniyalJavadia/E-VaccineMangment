@@ -1,3 +1,7 @@
+bs
+@extends('hospital/dashboard/master')
+
+@section("vaccineadd-main-content")
 <!doctype html>
 <html lang="en">
     <head>
@@ -22,7 +26,17 @@
         <header>
             <!-- place navbar here -->
         </header>
-        <main></main>
+        <main>
+                 
+                    <form class="form-control" action=""method="post">
+                            @csrf
+                            <div class="inputVaccinaeName">
+                                <label for="">Vaccine Name</label>
+                                <input class="form-control" type="text" placeholder="Vaccine Name">
+                            </div>
+                        </form>
+
+        </main>
         <footer>
             <!-- place footer here -->
         </footer>
@@ -40,3 +54,4 @@
         ></script>
     </body>
 </html>
+ @endsection
