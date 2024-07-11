@@ -1,4 +1,4 @@
-bs
+
 @extends('hospital/dashboard/master')
 
 @section("vaccineadd-main-content")
@@ -28,12 +28,21 @@ bs
         </header>
         <main>
                  
-                    <form class="form-control" action=""method="post">
+                    <form class="form-control" action="{{route('vaccineadd.post')}}" method="post">
                             @csrf
                             <div class="inputVaccinaeName">
                                 <label for="">Vaccine Name</label>
-                                <input class="form-control" type="text" placeholder="Vaccine Name">
-                            </div>
+                                <input class="form-control"  name="vaccine_name"  type="text" placeholder="Vaccine Name">
+                            </div>    
+                            <div class="inputQuatity mt-3">
+                            <label for="">Quantity</label>
+                            <input type="number" class="form-control" name="quantity" value="{{ old('quantity') }}" required>
+                                @error('quantity')
+                                 <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                        </div>
+                        <button class=" mt-3 btn btn-primary">Sumbit</button>
+
                         </form>
 
         </main>

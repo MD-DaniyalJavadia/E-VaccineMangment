@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\admin;
 use App\Models\childinfo;
 use App\Models\hospital;
+use App\Models\VaccineAdd;
+//use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Validator;
+
+
 class pageController extends Controller
 {
     public function prelogin()
@@ -222,8 +227,26 @@ class pageController extends Controller
             session()->forget("hospital");
             return redirect("home");
         }
-        public function vaccineaddfun()
-        {
-            return view('hospital/dashboard/vaccineadd');
-        }
-}   
+                public function vaccineaddfun()
+                {
+                    return view('hospital/dashboard/vaccineadd');
+                }
+                public function vaccineaddfunpost(Request $request) {
+                   // dd($request->all());
+                    $validator = Validator::make($request->all(), [
+                        'quantity' => 'required|numeric|min:1',
+                    ]);
+                
+                    if ($validator->fails()) {
+                        return back()->withErrors($validator);
+                    }
+                
+                    $vaccineadd = new vaccineadd;
+                    $vaccineadd->vaccineName=$request->vaccine_name;
+                    $vaccineadd->quantity=$request->quantity;
+                    $vaccineadd->save();
+                
+                    return redirect()->back()->with("VaccineAdd","Admin Added SuccessFully");
+                }
+                
+}
