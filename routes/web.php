@@ -57,3 +57,4 @@ Route::get("login",[PageController::class,"hospitalprelogin"]);
 Route::get("logout",[PageController::class,"hospitallogout"])->name("hospital-logout");
 Route::get("hospital/dashboard/vaccineadd",[pageController::class,"vaccineaddfun"])->name('vaccineadd');
 Route::post("hospital/dashboard/vaccineadd-post",[pageController::class,"vaccineaddfunpost"])->name('vaccineadd.post');
+Route::Post("vaccine-booking-post",[pageController::class,"vaccinebookingfunpost"])->name("vaccinebookingPost");

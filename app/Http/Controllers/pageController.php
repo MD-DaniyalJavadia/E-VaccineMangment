@@ -7,6 +7,7 @@ use App\Models\admin;
 use App\Models\childinfo;
 use App\Models\hospital;
 use App\Models\VaccineAdd;
+use App\Models\vacccineBooking;
 //use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Validator;
 
@@ -62,7 +63,9 @@ class pageController extends Controller
  
     public function homePageFun()
     {
-        return view('home');
+        $vaccineadd = vaccineadd::all();
+        $hospital= hospital::all();
+        return view("home",compact('hospital','vaccineadd'));
     }
     public function aboutpageFun()
     {
@@ -152,6 +155,7 @@ class pageController extends Controller
         return view("signupparent");
     }
     public function signupParentPost(Request $request)
+    
     {
         $childinfo = new childinfo;
         $childinfo->first_name=$request->firstName;
@@ -248,5 +252,20 @@ class pageController extends Controller
                 
                     return redirect()->back()->with("VaccineAdd","Admin Added SuccessFully");
                 }
+                public function vaccinebookingfunpost(Request $request)
+                {
+                 
+                $VaccineAdd = new VaccineAdd;
+                $VaccineAdd->patient_name=$request->name;
+                $VaccineAdd->patient_email=$request->email;
+                $VaccineAdd->contactNumber=$request->mobileNumber;
+                // $VaccineAdd->hospitalName=$request->hospital;
+                $VaccineAdd->vaccineName=$request->vaccineName;
+                $VaccineAdd->date=$request->date;
+                $VaccineAdd->time=$request->time;
+                $VaccineAdd->save();
+                return redirect()->back();
                 
-}
+                }
+              
+            }                

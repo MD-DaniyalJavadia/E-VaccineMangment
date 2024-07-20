@@ -1,3 +1,4 @@
+
 @extends("master")
 @section("home-page-content")
 
@@ -435,10 +436,22 @@
                         <div class="col-sm-6">
                             <div class="form-floating">
                                 <select class="form-select" id="service">
-                                    <option selected>Pathology Testing</option>
-                                    <option value="">Microbiology Tests</option>
-                                    <option value="">Biochemistry Tests</option>
-                                    <option value="">Histopatology Tests</option>
+                                
+                                @foreach($hospital as $hospital)
+                                    <option selected>{{$hospital->hostpitalName}}</option>
+                                    @endforeach
+                                </select>
+                                <label for="service">Vaccine Type</label>
+                            </div>
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-floating">
+                                <select class="form-select" id="service">
+                                
+                                @foreach($vaccineadd as $vaccineadd)
+                                    <option selected>{{$vaccineadd->vaccineName}}</option>
+                                    @endforeach
                                 </select>
                                 <label for="service">Vaccine Type</label>
                             </div>
@@ -456,18 +469,7 @@
                                 <label for="mobile">Appointment Time</label>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <select class="form-select" id="service">
-                                    <option selected>Pathology Testing</option>
-                                    <option value="">Microbiology Tests</option>
-                                    <option value="">Biochemistry Tests</option>
-                                    <option value="">Histopatology Tests</option>
-                                </select>
-                                <label for="service">Hospital</label>
-                            </div>
-                            
-                        </div>
+                        
 
                         <div class="col-12 text-center">
                             <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
