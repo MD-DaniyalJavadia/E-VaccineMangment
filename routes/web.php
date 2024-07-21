@@ -10,7 +10,9 @@ Route::get('master', function () {
 
 Route::get("contact",[PageController::class,"contactPageFun"])->name('contact.page');
 Route::get("services",[PageController::class,"servicesPageFun"])->name('services.page');
-Route::get("home",[PageController::class,"homePageFun"])->name('home.page');
+// Route::get("home",[PageController::class,"homePageFun"])->name('home.page');
+Route::match(['GET', 'POST'], 'home', [PageController::class, 'homePageFun'])->name('home.page');
+
 Route::get("about",[PageController::class,"aboutPageFun"])->name('about.page');
 Route::get("features",[PageController::class,"featuresPageFun"])->name('features.page');
 Route::get("team",[PageController::class,"teamPageFun"])->name("team.page");

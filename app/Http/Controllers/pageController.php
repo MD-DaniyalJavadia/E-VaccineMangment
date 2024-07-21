@@ -8,7 +8,7 @@ use App\Models\childinfo;
 use App\Models\hospital;
 use App\Models\VaccineAdd;
 use App\Models\vacccineBooking;
-//use Illuminate\Validation\Validator;
+// use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -252,19 +252,20 @@ class pageController extends Controller
                 
                     return redirect()->back()->with("VaccineAdd","Admin Added SuccessFully");
                 }
+               
                 public function vaccinebookingfunpost(Request $request)
                 {
                  
-                $VaccineAdd = new VaccineAdd;
-                $VaccineAdd->patient_name=$request->name;
-                $VaccineAdd->patient_email=$request->email;
-                $VaccineAdd->contactNumber=$request->mobileNumber;
-                // $VaccineAdd->hospitalName=$request->hospital;
-                $VaccineAdd->vaccineName=$request->vaccineName;
-                $VaccineAdd->date=$request->date;
-                $VaccineAdd->time=$request->time;
-                $VaccineAdd->save();
-                return redirect()->back();
+                $vacccineBooking = new vacccineBooking;
+                $vacccineBooking->patient_name=$request->Fullname;
+                $vacccineBooking->patient_email=$request->mail;
+                $vacccineBooking->contactNumber=$request->mobile;
+                $vacccineBooking->hospitalName=$request->hospitalName;
+                $vacccineBooking->vaccineName=$request->vaccineType;
+                $vacccineBooking->date=$request->AppointmentDate;
+                $vacccineBooking->time=$request->AppointmentTime;
+                $vacccineBooking->save();
+                return redirect()->back()->wtih('Success',"Vaccine Book SuccessFully");
                 
                 }
               

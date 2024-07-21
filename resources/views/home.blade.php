@@ -408,46 +408,49 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <h2 class="mb-4">Book Your Vaccine</h2>
+                    @if(session()->has('Success'))
+                                    <div class="alert alert-warning">
+                                        {{session()->get('Success')}}
+                                    </div>
+                                @endif 
+                    <form action="" method="post" action="{{route('vaccinebookingPost')}}">
+                        @csrf
+        
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control" name="Fullname" placeholder="Your Name">
                                 <label for="name">Full Name</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="mail" placeholder="Your Email">
-                                <label for="mail">Date Of Birth</label>
+                                <input type="text" class="form-control" name="mail" placeholder="Your Email">
+                                <label for="mail">Email</label>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <input type="text" class="form-control" name="mobile" placeholder="Your Mobile">
                                 <label for="mobile">Contact Number</label>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        
+<div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                <label for="mobile">Email Address</label>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-floating">
-                                <select class="form-select" id="service">
+                                <select  name="hospitalName"class="form-select" id="service">
                                 
                                 @foreach($hospital as $hospital)
                                     <option selected>{{$hospital->hostpitalName}}</option>
                                     @endforeach
                                 </select>
-                                <label for="service">Vaccine Type</label>
+                                <label for="service">Hopspital</label>
                             </div>
                             
                         </div>
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <select class="form-select" id="service">
+                                <select name="vaccineType" class="form-select" id="service">
                                 
                                 @foreach($vaccineadd as $vaccineadd)
                                     <option selected>{{$vaccineadd->vaccineName}}</option>
@@ -457,24 +460,28 @@
                             </div>
                             
                         </div>
+                            
+
                         <div class="col-sm-6">
                             <div class="form-floating">
-                                <input type="date" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <input type="date" class="form-control" name="AppointmentDate" placeholder="Your Mobile">
                                 <label for="mobile">Appointment Date</label>
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-18">
                             <div class="form-floating">
-                                <input type="time" class="form-control" id="mobile" placeholder="Your Mobile">
+                                <input type="time" class="form-control" name="AppointmentTime" placeholder="Your Mobile">
                                 <label for="mobile">Appointment Time</label>
                             </div>
                         </div>
                         
 
                         <div class="col-12 text-center">
-                            <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
+                        <button class="btn btn-primary w-100 py-3 form-control">Submit</button>    
+                        <!-- <button class="btn btn-primary w-100 py-3" type="submit">Submit</button> -->
                         </div>
                     </div>
+</form>
                 </div>
             </div>
         </div>
