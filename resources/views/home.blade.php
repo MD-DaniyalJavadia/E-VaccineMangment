@@ -413,7 +413,7 @@
                                         {{session()->get('Success')}}
                                     </div>
                                 @endif 
-                    <form action="" method="post" action="{{route('vaccinebookingPost')}}">
+                    <form method="post" action="{{route('vaccinebookingPost')}}">
                         @csrf
         
                     <div class="row g-3">

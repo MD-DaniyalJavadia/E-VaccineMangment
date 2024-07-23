@@ -165,7 +165,7 @@ class pageController extends Controller
         $childinfo->phno_number=$request->phnoNumber;
         $childinfo->Address=$request->address;
         $childinfo->save();
-        return redirect()->back()->with("success","Usper Added SuccessFully");
+        return redirect('parent/dashboard/dashboard')->with("success","Your Account Has Been Created SuccessFully");
     }
     public function forgotpassword()
     {
