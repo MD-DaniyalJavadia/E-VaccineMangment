@@ -60,13 +60,21 @@ class pageController extends Controller
         return redirect()->back()->with("AdminSuccess","Admin Added SuccessFully");
     
         }
- 
-    public function homePageFun()
+
+        
+    public function IndexPageFun()
     {
         $vaccineadd = vaccineadd::all();
         $hospital= hospital::all();
-        return view("home",compact('hospital','vaccineadd'));
+        return view("Index",compact('hospital','vaccineadd'));
     }
+       
+    // public function homePageFun()
+    // {
+    //     $vaccineadd = vaccineadd::all();
+    //     $hospital= hospital::all();
+    //     return view("home",compact('hospital','vaccineadd'));
+    // }
     public function aboutpageFun()
     {
         return view('about');
@@ -265,7 +273,8 @@ class pageController extends Controller
                 $vacccineBooking->date=$request->AppointmentDate;
                 $vacccineBooking->time=$request->AppointmentTime;
                 $vacccineBooking->save();
-                return redirect()->back()->wtih('Success',"Vaccine Book SuccessFully");
+                return redirect()->back();
+                // return redirect()->back()->wtih('Success',"Vaccine Book SuccessFully");
                 
                 }
               
